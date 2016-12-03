@@ -1,0 +1,10 @@
+M2: Add 1 to binary number in left to right order
+0,1
+0,1
+A,F,R
+A
+F
+R
+A,0|F,1,R
+A,1|A,0,R
+A,_|F,1,R

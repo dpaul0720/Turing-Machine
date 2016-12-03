@@ -1,0 +1,322 @@
+plee4: TM that decides a language consisting of all strings of 0s whose length is a power of 2
+Rule #1 : q1,0|q2,_,R
+Rule #2 : q1,_|qreject,_,R
+Rule #3 : q1,x|qreject,x,R
+Rule #4 : q2,x|q2,x,R
+Rule #5 : q2,0|q3,x,R
+Rule #6 : q2,_|qaccept,_,R
+Rule #7 : q3,x|q3,x,R
+Rule #8 : q3,0|q4,0,R
+Rule #9 : q3,_|q5,_,L
+Rule #10 : q4,x|q4,x,R
+Rule #11 : q4,0|q3,x,R
+Rule #12 : q4,_|qreject,_,R
+Rule #13 : q5,0|q5,0,L
+Rule #14 : q5,x|q5,x,L
+Rule #15 : q5,_|q2,_,R 
+
+Tape:  0_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 6 : q2 _ | qaccept _ 2
+Accepted : _
+
+
+Tape:  00_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 9 : q3 _ | q5 _ 1
+Step # 4 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 5 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 6 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 7 @ Current Tape Head Index  2 # Rule Number 6 : q2 _ | qaccept _ 3
+Accepted : _x
+
+
+Tape:  0000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 9 : q3 _ | q5 _ 3
+Step # 6 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 7 @ Current Tape Head Index  2 # Rule Number 13 : q5 0 | q5 0 1
+Step # 8 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 9 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 10 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 11 @ Current Tape Head Index  2 # Rule Number 5 : q2 0 | q3 x 3
+Step # 12 @ Current Tape Head Index  3 # Rule Number 7 : q3 x | q3 x 4
+Step # 13 @ Current Tape Head Index  4 # Rule Number 9 : q3 _ | q5 _ 3
+Step # 14 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 15 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 16 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 17 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 18 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 19 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 20 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 21 @ Current Tape Head Index  4 # Rule Number 6 : q2 _ | qaccept _ 5
+Accepted : _xxx
+
+
+Tape:  00000000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 11 : q4 0 | q3 x 6
+Step # 7 @ Current Tape Head Index  6 # Rule Number 8 : q3 0 | q4 0 7
+Step # 8 @ Current Tape Head Index  7 # Rule Number 11 : q4 0 | q3 x 8
+Step # 9 @ Current Tape Head Index  8 # Rule Number 9 : q3 _ | q5 _ 7
+Step # 10 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 11 @ Current Tape Head Index  6 # Rule Number 13 : q5 0 | q5 0 5
+Step # 12 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 13 @ Current Tape Head Index  4 # Rule Number 13 : q5 0 | q5 0 3
+Step # 14 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 15 @ Current Tape Head Index  2 # Rule Number 13 : q5 0 | q5 0 1
+Step # 16 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 17 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 18 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 19 @ Current Tape Head Index  2 # Rule Number 5 : q2 0 | q3 x 3
+Step # 20 @ Current Tape Head Index  3 # Rule Number 7 : q3 x | q3 x 4
+Step # 21 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 22 @ Current Tape Head Index  5 # Rule Number 10 : q4 x | q4 x 6
+Step # 23 @ Current Tape Head Index  6 # Rule Number 11 : q4 0 | q3 x 7
+Step # 24 @ Current Tape Head Index  7 # Rule Number 7 : q3 x | q3 x 8
+Step # 25 @ Current Tape Head Index  8 # Rule Number 9 : q3 _ | q5 _ 7
+Step # 26 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 27 @ Current Tape Head Index  6 # Rule Number 14 : q5 x | q5 x 5
+Step # 28 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 29 @ Current Tape Head Index  4 # Rule Number 13 : q5 0 | q5 0 3
+Step # 30 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 31 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 32 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 33 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 34 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 35 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 36 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 37 @ Current Tape Head Index  4 # Rule Number 5 : q2 0 | q3 x 5
+Step # 38 @ Current Tape Head Index  5 # Rule Number 7 : q3 x | q3 x 6
+Step # 39 @ Current Tape Head Index  6 # Rule Number 7 : q3 x | q3 x 7
+Step # 40 @ Current Tape Head Index  7 # Rule Number 7 : q3 x | q3 x 8
+Step # 41 @ Current Tape Head Index  8 # Rule Number 9 : q3 _ | q5 _ 7
+Step # 42 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 43 @ Current Tape Head Index  6 # Rule Number 14 : q5 x | q5 x 5
+Step # 44 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 45 @ Current Tape Head Index  4 # Rule Number 14 : q5 x | q5 x 3
+Step # 46 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 47 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 48 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 49 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 50 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 51 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 52 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 53 @ Current Tape Head Index  4 # Rule Number 4 : q2 x | q2 x 5
+Step # 54 @ Current Tape Head Index  5 # Rule Number 4 : q2 x | q2 x 6
+Step # 55 @ Current Tape Head Index  6 # Rule Number 4 : q2 x | q2 x 7
+Step # 56 @ Current Tape Head Index  7 # Rule Number 4 : q2 x | q2 x 8
+Step # 57 @ Current Tape Head Index  8 # Rule Number 6 : q2 _ | qaccept _ 9
+Accepted : _xxxxxxx
+
+
+Tape:  0000000000000000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 11 : q4 0 | q3 x 6
+Step # 7 @ Current Tape Head Index  6 # Rule Number 8 : q3 0 | q4 0 7
+Step # 8 @ Current Tape Head Index  7 # Rule Number 11 : q4 0 | q3 x 8
+Step # 9 @ Current Tape Head Index  8 # Rule Number 8 : q3 0 | q4 0 9
+Step # 10 @ Current Tape Head Index  9 # Rule Number 11 : q4 0 | q3 x 10
+Step # 11 @ Current Tape Head Index  10 # Rule Number 8 : q3 0 | q4 0 11
+Step # 12 @ Current Tape Head Index  11 # Rule Number 11 : q4 0 | q3 x 12
+Step # 13 @ Current Tape Head Index  12 # Rule Number 8 : q3 0 | q4 0 13
+Step # 14 @ Current Tape Head Index  13 # Rule Number 11 : q4 0 | q3 x 14
+Step # 15 @ Current Tape Head Index  14 # Rule Number 8 : q3 0 | q4 0 15
+Step # 16 @ Current Tape Head Index  15 # Rule Number 11 : q4 0 | q3 x 16
+Step # 17 @ Current Tape Head Index  16 # Rule Number 9 : q3 _ | q5 _ 15
+Step # 18 @ Current Tape Head Index  15 # Rule Number 14 : q5 x | q5 x 14
+Step # 19 @ Current Tape Head Index  14 # Rule Number 13 : q5 0 | q5 0 13
+Step # 20 @ Current Tape Head Index  13 # Rule Number 14 : q5 x | q5 x 12
+Step # 21 @ Current Tape Head Index  12 # Rule Number 13 : q5 0 | q5 0 11
+Step # 22 @ Current Tape Head Index  11 # Rule Number 14 : q5 x | q5 x 10
+Step # 23 @ Current Tape Head Index  10 # Rule Number 13 : q5 0 | q5 0 9
+Step # 24 @ Current Tape Head Index  9 # Rule Number 14 : q5 x | q5 x 8
+Step # 25 @ Current Tape Head Index  8 # Rule Number 13 : q5 0 | q5 0 7
+Step # 26 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 27 @ Current Tape Head Index  6 # Rule Number 13 : q5 0 | q5 0 5
+Step # 28 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 29 @ Current Tape Head Index  4 # Rule Number 13 : q5 0 | q5 0 3
+Step # 30 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 31 @ Current Tape Head Index  2 # Rule Number 13 : q5 0 | q5 0 1
+Step # 32 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 33 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 34 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 35 @ Current Tape Head Index  2 # Rule Number 5 : q2 0 | q3 x 3
+Step # 36 @ Current Tape Head Index  3 # Rule Number 7 : q3 x | q3 x 4
+Step # 37 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 38 @ Current Tape Head Index  5 # Rule Number 10 : q4 x | q4 x 6
+Step # 39 @ Current Tape Head Index  6 # Rule Number 11 : q4 0 | q3 x 7
+Step # 40 @ Current Tape Head Index  7 # Rule Number 7 : q3 x | q3 x 8
+Step # 41 @ Current Tape Head Index  8 # Rule Number 8 : q3 0 | q4 0 9
+Step # 42 @ Current Tape Head Index  9 # Rule Number 10 : q4 x | q4 x 10
+Step # 43 @ Current Tape Head Index  10 # Rule Number 11 : q4 0 | q3 x 11
+Step # 44 @ Current Tape Head Index  11 # Rule Number 7 : q3 x | q3 x 12
+Step # 45 @ Current Tape Head Index  12 # Rule Number 8 : q3 0 | q4 0 13
+Step # 46 @ Current Tape Head Index  13 # Rule Number 10 : q4 x | q4 x 14
+Step # 47 @ Current Tape Head Index  14 # Rule Number 11 : q4 0 | q3 x 15
+Step # 48 @ Current Tape Head Index  15 # Rule Number 7 : q3 x | q3 x 16
+Step # 49 @ Current Tape Head Index  16 # Rule Number 9 : q3 _ | q5 _ 15
+Step # 50 @ Current Tape Head Index  15 # Rule Number 14 : q5 x | q5 x 14
+Step # 51 @ Current Tape Head Index  14 # Rule Number 14 : q5 x | q5 x 13
+Step # 52 @ Current Tape Head Index  13 # Rule Number 14 : q5 x | q5 x 12
+Step # 53 @ Current Tape Head Index  12 # Rule Number 13 : q5 0 | q5 0 11
+Step # 54 @ Current Tape Head Index  11 # Rule Number 14 : q5 x | q5 x 10
+Step # 55 @ Current Tape Head Index  10 # Rule Number 14 : q5 x | q5 x 9
+Step # 56 @ Current Tape Head Index  9 # Rule Number 14 : q5 x | q5 x 8
+Step # 57 @ Current Tape Head Index  8 # Rule Number 13 : q5 0 | q5 0 7
+Step # 58 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 59 @ Current Tape Head Index  6 # Rule Number 14 : q5 x | q5 x 5
+Step # 60 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 61 @ Current Tape Head Index  4 # Rule Number 13 : q5 0 | q5 0 3
+Step # 62 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 63 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 64 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 65 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 66 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 67 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 68 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 69 @ Current Tape Head Index  4 # Rule Number 5 : q2 0 | q3 x 5
+Step # 70 @ Current Tape Head Index  5 # Rule Number 7 : q3 x | q3 x 6
+Step # 71 @ Current Tape Head Index  6 # Rule Number 7 : q3 x | q3 x 7
+Step # 72 @ Current Tape Head Index  7 # Rule Number 7 : q3 x | q3 x 8
+Step # 73 @ Current Tape Head Index  8 # Rule Number 8 : q3 0 | q4 0 9
+Step # 74 @ Current Tape Head Index  9 # Rule Number 10 : q4 x | q4 x 10
+Step # 75 @ Current Tape Head Index  10 # Rule Number 10 : q4 x | q4 x 11
+Step # 76 @ Current Tape Head Index  11 # Rule Number 10 : q4 x | q4 x 12
+Step # 77 @ Current Tape Head Index  12 # Rule Number 11 : q4 0 | q3 x 13
+Step # 78 @ Current Tape Head Index  13 # Rule Number 7 : q3 x | q3 x 14
+Step # 79 @ Current Tape Head Index  14 # Rule Number 7 : q3 x | q3 x 15
+Step # 80 @ Current Tape Head Index  15 # Rule Number 7 : q3 x | q3 x 16
+Step # 81 @ Current Tape Head Index  16 # Rule Number 9 : q3 _ | q5 _ 15
+Step # 82 @ Current Tape Head Index  15 # Rule Number 14 : q5 x | q5 x 14
+Step # 83 @ Current Tape Head Index  14 # Rule Number 14 : q5 x | q5 x 13
+Step # 84 @ Current Tape Head Index  13 # Rule Number 14 : q5 x | q5 x 12
+Step # 85 @ Current Tape Head Index  12 # Rule Number 14 : q5 x | q5 x 11
+Step # 86 @ Current Tape Head Index  11 # Rule Number 14 : q5 x | q5 x 10
+Step # 87 @ Current Tape Head Index  10 # Rule Number 14 : q5 x | q5 x 9
+Step # 88 @ Current Tape Head Index  9 # Rule Number 14 : q5 x | q5 x 8
+Step # 89 @ Current Tape Head Index  8 # Rule Number 13 : q5 0 | q5 0 7
+Step # 90 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 91 @ Current Tape Head Index  6 # Rule Number 14 : q5 x | q5 x 5
+Step # 92 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 93 @ Current Tape Head Index  4 # Rule Number 14 : q5 x | q5 x 3
+Step # 94 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 95 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 96 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 97 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 98 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 99 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 100 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 101 @ Current Tape Head Index  4 # Rule Number 4 : q2 x | q2 x 5
+Step # 102 @ Current Tape Head Index  5 # Rule Number 4 : q2 x | q2 x 6
+Step # 103 @ Current Tape Head Index  6 # Rule Number 4 : q2 x | q2 x 7
+Step # 104 @ Current Tape Head Index  7 # Rule Number 4 : q2 x | q2 x 8
+Step # 105 @ Current Tape Head Index  8 # Rule Number 5 : q2 0 | q3 x 9
+Step # 106 @ Current Tape Head Index  9 # Rule Number 7 : q3 x | q3 x 10
+Step # 107 @ Current Tape Head Index  10 # Rule Number 7 : q3 x | q3 x 11
+Step # 108 @ Current Tape Head Index  11 # Rule Number 7 : q3 x | q3 x 12
+Step # 109 @ Current Tape Head Index  12 # Rule Number 7 : q3 x | q3 x 13
+Step # 110 @ Current Tape Head Index  13 # Rule Number 7 : q3 x | q3 x 14
+Step # 111 @ Current Tape Head Index  14 # Rule Number 7 : q3 x | q3 x 15
+Step # 112 @ Current Tape Head Index  15 # Rule Number 7 : q3 x | q3 x 16
+Step # 113 @ Current Tape Head Index  16 # Rule Number 9 : q3 _ | q5 _ 15
+Step # 114 @ Current Tape Head Index  15 # Rule Number 14 : q5 x | q5 x 14
+Step # 115 @ Current Tape Head Index  14 # Rule Number 14 : q5 x | q5 x 13
+Step # 116 @ Current Tape Head Index  13 # Rule Number 14 : q5 x | q5 x 12
+Step # 117 @ Current Tape Head Index  12 # Rule Number 14 : q5 x | q5 x 11
+Step # 118 @ Current Tape Head Index  11 # Rule Number 14 : q5 x | q5 x 10
+Step # 119 @ Current Tape Head Index  10 # Rule Number 14 : q5 x | q5 x 9
+Step # 120 @ Current Tape Head Index  9 # Rule Number 14 : q5 x | q5 x 8
+Step # 121 @ Current Tape Head Index  8 # Rule Number 14 : q5 x | q5 x 7
+Step # 122 @ Current Tape Head Index  7 # Rule Number 14 : q5 x | q5 x 6
+Step # 123 @ Current Tape Head Index  6 # Rule Number 14 : q5 x | q5 x 5
+Step # 124 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 125 @ Current Tape Head Index  4 # Rule Number 14 : q5 x | q5 x 3
+Step # 126 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 127 @ Current Tape Head Index  2 # Rule Number 14 : q5 x | q5 x 1
+Step # 128 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 129 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 130 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 131 @ Current Tape Head Index  2 # Rule Number 4 : q2 x | q2 x 3
+Step # 132 @ Current Tape Head Index  3 # Rule Number 4 : q2 x | q2 x 4
+Step # 133 @ Current Tape Head Index  4 # Rule Number 4 : q2 x | q2 x 5
+Step # 134 @ Current Tape Head Index  5 # Rule Number 4 : q2 x | q2 x 6
+Step # 135 @ Current Tape Head Index  6 # Rule Number 4 : q2 x | q2 x 7
+Step # 136 @ Current Tape Head Index  7 # Rule Number 4 : q2 x | q2 x 8
+Step # 137 @ Current Tape Head Index  8 # Rule Number 4 : q2 x | q2 x 9
+Step # 138 @ Current Tape Head Index  9 # Rule Number 4 : q2 x | q2 x 10
+Step # 139 @ Current Tape Head Index  10 # Rule Number 4 : q2 x | q2 x 11
+Step # 140 @ Current Tape Head Index  11 # Rule Number 4 : q2 x | q2 x 12
+Step # 141 @ Current Tape Head Index  12 # Rule Number 4 : q2 x | q2 x 13
+Step # 142 @ Current Tape Head Index  13 # Rule Number 4 : q2 x | q2 x 14
+Step # 143 @ Current Tape Head Index  14 # Rule Number 4 : q2 x | q2 x 15
+Step # 144 @ Current Tape Head Index  15 # Rule Number 4 : q2 x | q2 x 16
+Step # 145 @ Current Tape Head Index  16 # Rule Number 6 : q2 _ | qaccept _ 17
+Accepted : _xxxxxxxxxxxxxxx
+
+
+Tape:  000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 12 : q4 _ | qreject _ 4
+Rejected : _x0
+
+
+Tape:  00000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 12 : q4 _ | qreject _ 6
+Rejected : _x0x0
+
+
+Tape:  000000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 11 : q4 0 | q3 x 6
+Step # 7 @ Current Tape Head Index  6 # Rule Number 9 : q3 _ | q5 _ 5
+Step # 8 @ Current Tape Head Index  5 # Rule Number 14 : q5 x | q5 x 4
+Step # 9 @ Current Tape Head Index  4 # Rule Number 13 : q5 0 | q5 0 3
+Step # 10 @ Current Tape Head Index  3 # Rule Number 14 : q5 x | q5 x 2
+Step # 11 @ Current Tape Head Index  2 # Rule Number 13 : q5 0 | q5 0 1
+Step # 12 @ Current Tape Head Index  1 # Rule Number 14 : q5 x | q5 x 0
+Step # 13 @ Current Tape Head Index  0 # Rule Number 15 : q5 _ | q2 _ 1
+Step # 14 @ Current Tape Head Index  1 # Rule Number 4 : q2 x | q2 x 2
+Step # 15 @ Current Tape Head Index  2 # Rule Number 5 : q2 0 | q3 x 3
+Step # 16 @ Current Tape Head Index  3 # Rule Number 7 : q3 x | q3 x 4
+Step # 17 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 18 @ Current Tape Head Index  5 # Rule Number 10 : q4 x | q4 x 6
+Step # 19 @ Current Tape Head Index  6 # Rule Number 12 : q4 _ | qreject _ 7
+Rejected : _xxx0x
+
+
+Tape:  0000000_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : q1 0 | q2 _ 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 5 : q2 0 | q3 x 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 8 : q3 0 | q4 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 11 : q4 0 | q3 x 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 8 : q3 0 | q4 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 11 : q4 0 | q3 x 6
+Step # 7 @ Current Tape Head Index  6 # Rule Number 8 : q3 0 | q4 0 7
+Step # 8 @ Current Tape Head Index  7 # Rule Number 12 : q4 _ | qreject _ 8
+Rejected : _x0x0x0
+
+

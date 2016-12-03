@@ -1,0 +1,53 @@
+M2: Add 1 to binary number in left to right order
+Rule #1 : A,0|F,1,R
+Rule #2 : A,1|A,0,R
+Rule #3 : A,_|F,1,R
+
+
+Tape:  0_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 1 : A 0 | F 1 1
+Accepted : 1
+
+
+Tape:  1_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 2 : A 1 | A 0 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 3 : A _ | F 1 2
+Accepted : 01
+
+
+Tape:  10_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 2 : A 1 | A 0 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 1 : A 0 | F 1 2
+Accepted : 01
+
+
+Tape:  11101_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 2 : A 1 | A 0 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 2 : A 1 | A 0 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 2 : A 1 | A 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 1 : A 0 | F 1 4
+Accepted : 00011
+
+
+Tape:  10011_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 2 : A 1 | A 0 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 1 : A 0 | F 1 2
+Accepted : 01011
+
+
+Tape:  111111_
+Step # 1 @ Current Tape Head Index  0 # Rule Number 2 : A 1 | A 0 1
+Step # 2 @ Current Tape Head Index  1 # Rule Number 2 : A 1 | A 0 2
+Step # 3 @ Current Tape Head Index  2 # Rule Number 2 : A 1 | A 0 3
+Step # 4 @ Current Tape Head Index  3 # Rule Number 2 : A 1 | A 0 4
+Step # 5 @ Current Tape Head Index  4 # Rule Number 2 : A 1 | A 0 5
+Step # 6 @ Current Tape Head Index  5 # Rule Number 2 : A 1 | A 0 6
+Step # 7 @ Current Tape Head Index  6 # Rule Number 3 : A _ | F 1 7
+Accepted : 0000001
+
+
+Tape:  __
+Step # 1 @ Current Tape Head Index  0 # Rule Number 3 : A _ | F 1 1
+Accepted : 1
+
+
